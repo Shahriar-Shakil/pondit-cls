@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Get Started with React</title>
+</head>
+
+<body>
+<div id="root">
+    Loading...
+</div>
+<script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+<script type="text/babel">
+ // Add your brand new component here
+  // const Greeting = (props) => {
+  //    //let {name,age,favColor}= props
+  //    console.log(props)
+  //     return ( 
+  //         <div>{`my name is ${props.name}. I am ${props.age} old`}</div>
+  //      );
+  // }
+   
+  
+  // ReactDOM.render(
+  //     <Greeting name="Shakil" age={24} favColor="black"/>,
+  //     document.getElementById('root')
+  // );
+
+//2
+// const Greeting = (props) =>{
+ 
+//     return (
+//         <h1>Hello {props.name}</h1>
+//     )
+// } 
+
+// // Default Props
+// Greeting.defaultProps = {
+//   name: "BITM"
+// };
+// console.log(Greeting)
+// ReactDOM.render(
+//     <Greeting  />,
+//     document.getElementById('root')
+// );
+// class Bitm{
+//   constructor(){
+//     this.name=""
+//   }
+// }
+// class Greeting extends React.Component {
+//      render(){
+      
+//      return <h1>Hello {this.props.name}</h1>;
+//      }
+//    }
+
+// ReactDOM.render(
+//      <Greeting name="edmond"/>,
+//      document.getElementById('root')
+//    );
+
+<!-- class Alert extends React.Component {
+  
+
+alert(){
+  alert("Hello! I am an alert box!!");
+}
+  render() { 
+    return ( 
+<div>
+<button onClick={this.alert}>edit</button>
+</div>
+     );
+  }
+}
+ ReactDOM.render(
+     <Alert />,
+     document.getElementById('root')
+   ); -->
+
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'Shahriar'
+    }
+  }
+  render() {
+    return (
+       <div>
+         <Navbar name={this.state.name} />
+       </div>
+    );
+  }
+};
+ReactDOM.render(
+     <MyApp/>,
+     document.getElementById('root')
+   );
+</script>
+</body>
+</html>
