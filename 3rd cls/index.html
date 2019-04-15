@@ -82,44 +82,83 @@
 // ReactDOM.render(<MyComponents />, document.getElementById("root"))
 
 //4
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visibility: false
-    };
-   this.toggleVisibility=this.toggleVisibility.bind(this)
-  }
- toggleVisibility(){
-   this.setState((prevState)=>{
-       console.log(prevState)
-    return{
-       visibility: !prevState.visibility 
+// class MyComponent extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       visibility: false
+//     };
+//    this.toggleVisibility=this.toggleVisibility.bind(this)
+//   }
+//  toggleVisibility(){
+//    this.setState((prevState)=>{
+//        console.log(prevState)
+//     return{
+//        visibility: !prevState.visibility 
+//    }
+//    }
+   
+//    )
+//  }
+
+//   render() {
+//     if (this.state.visibility) {
+//       return (
+//         <div>
+//           <button onClick={this.toggleVisibility}>Click Me</button>
+//           <h1>Now you see me!</h1>
+//         </div>
+//       );
+//     } else {
+//       return (
+//         <div>
+//           <button onClick={this.toggleVisibility}>Click Me</button>
+//         </div>
+//       );
+//     }
+//   }
+// };
+
+// ReactDOM.render(<MyComponent />, document.getElementById("root"))
+
+
+
+
+class App extends React.Component {
+   constructor() {
+     super();
+     this.state = {
+       count:0
+     }
    }
+  
+   onClick = () => {
+     this.setState({
+       count: this.state.count + 1
+     });
+     
+    
    }
    
-   )
- }
-  render() {
-    if (this.state.visibility) {
-      return (
-        <div>
-          <button onClick={this.toggleVisibility}>Click Me</button>
-          <h1>Now you see me!</h1>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <button onClick={this.toggleVisibility}>Click Me</button>
-        </div>
-      );
-    }
-  }
-};
-
-ReactDOM.render(<MyComponent />, document.getElementById("root"))
-
+   
+   render(){
+     return( 
+       <div>
+         <div>
+          <h1>
+            {this.state.count}
+            </h1>
+         </div>
+         <button onClick={this.onClick}>Click-setState</button>
+        
+       </div>
+     );
+   }
+}
+ReactDOM.render(
+  <App />, 
+  document.getElementById("root")
+);
 </script>
 </body>
 </html>
